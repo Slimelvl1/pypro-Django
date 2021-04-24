@@ -1,6 +1,3 @@
-schedule: every week
-update: false
-=======
 requirements:
   - Pipfile
   - Pipfile.lock
