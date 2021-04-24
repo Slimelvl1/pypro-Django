@@ -1,5 +1,5 @@
 schedule: every week
-update: False
+update: false
 =======
 requirements:
   - Pipfile
