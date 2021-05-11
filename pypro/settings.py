@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from functools import partial
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from decouple import config, Csv
@@ -71,8 +72,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'pypro.wsgi.application'
-
-import dj_database_url
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
