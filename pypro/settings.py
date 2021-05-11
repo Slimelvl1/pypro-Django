@@ -72,6 +72,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'pypro.wsgi.application'
 
+import dj_database_url
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
