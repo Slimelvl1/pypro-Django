@@ -135,7 +135,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
-CLOUDINARY_ACESS_KEY_ID = config('API_KEY')
+CLOUDINARY_ACCESS_KEY_ID = config('API_KEY')
 
 COLLECTFAST_ENABLED = False
 
