@@ -14,6 +14,7 @@ from functools import partial
 from pathlib import Path
 import dj_database_url
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from decouple import config, Csv
 
@@ -40,7 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
+    'collectfast',
     'django.contrib.staticfiles',
+    'cloudinary',
+    'pypro.base',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'pypro.urls'
 
@@ -128,6 +134,25 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+
+CLOUDINARY_ACESS_KEY_ID = config('API_KEY')
+
+COLLECTFAST_ENABLED = False
+
+# Storage configuration in
+if CLOUDINARY_ACCESS_KEY_ID:
+    CLOUDINARY_STORAGE = {    # pragma: no cover
+        'CLOUD_NAME': config('CLOUD_NAME'),
+        'API_KEY': config('API_KEY'),
+        'API_SECRET': config('API_SECRET')
+    }
+    # static assets
+    STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'  # pragma: no cover
+    ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'  # pragma: no cover
+
+    # Media assets
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'  # pragma: no cover
+    COLLECTFAST_ENABLED = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
