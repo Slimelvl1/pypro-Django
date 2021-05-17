@@ -5,10 +5,6 @@ import django.utils.timezone
 import pypro.base.models
 
 
-class Flake8Exception(Exception):
-    """Plain Flake8 exception."""
-
-
 class Migration(migrations.Migration):
 
     initial = True
