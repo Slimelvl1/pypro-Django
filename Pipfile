@@ -15,6 +15,7 @@ cloudinary = "*"
 django-cloudinary-storage = "*"
 collectfast = "*"
 django-debug-toolbar = "*"
+sentry-sdk = "*"
 
 [dev-packages]
 flake8 = "*"
