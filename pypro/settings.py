@@ -175,7 +175,7 @@ SENTRY_DSN = config('SENTRY_DSN', default=None)
 if SENTRY_DSN:
 
     sentry_sdk.init(
-        dsn='SENTRY_DSN',
+        dsn='https://d9eddb27190a4043a57641a67d3906b2@o689921.ingest.sentry.io/5774370',
         integrations=[DjangoIntegration()],
 
         # Set traces_sample_rate to 1.0 to capture 100%
